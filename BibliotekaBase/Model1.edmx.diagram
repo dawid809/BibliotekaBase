@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="08affd0d2f8d4b57889d43c5258f2543" Name="Diagram1">
+        <EntityTypeShape EntityType="BibliotekaModel.Autorzy" Width="1.5" PointX="11.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotekaModel.Ksiazki" Width="1.5" PointX="8" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotekaModel.Studenci" Width="1.5" PointX="1.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotekaModel.TypKsiazki" Width="1.5" PointX="11.875" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotekaModel.Wypozyczenia" Width="1.5" PointX="5" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="BibliotekaModel.FK_Ksiazki_Autorzy" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotekaModel.FK_Ksiazki_TypKsiazki" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotekaModel.FK_Wypozyczenia_Ksiazki" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotekaModel.FK_Wypozyczenia_Studenci" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
