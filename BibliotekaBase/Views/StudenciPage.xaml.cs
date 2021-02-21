@@ -27,5 +27,20 @@ namespace BibliotekaBase.Views
             BibliotekaEntities db = new BibliotekaEntities();
             this.studencisDataGrid.ItemsSource = db.Studencis.ToList();
         }
+
+        private void Button_Add_Studenci(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Delete_Studenci(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Update_Studenci(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

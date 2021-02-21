@@ -16,6 +16,9 @@
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesStudencisViewSource}">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Studenci"/></TextBlock>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="65,325,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Studenci"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="165,325,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Studenci"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="265,325,0,0" VerticalAlignment="Top" Width="75" Click="Button_Update_Studenci"/>
         <DataGrid x:Name="studencisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="365,130,35,45" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn x:Name="dataUrodzeniaColumn" Width="SizeToHeader" Header="Data Urodzenia">

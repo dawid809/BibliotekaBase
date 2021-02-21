@@ -16,6 +16,9 @@
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesKsiazkisViewSource}">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Książki"/></TextBlock>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="85,310,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Ksiazki"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="180,310,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Ksiazki"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="280,310,0,0" VerticalAlignment="Top" Width="75" Click="Button_Update_Ksiazki"/>
         <DataGrid x:Name="ksiazkisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="370,110,25,65" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="autor_IDColumn" Width="SizeToHeader" Header="Autor ID" Binding="{Binding Autor_ID}"/>

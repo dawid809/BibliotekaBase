@@ -26,5 +26,20 @@ namespace BibliotekaBase.Views
             BibliotekaEntities db = new BibliotekaEntities();
             this.autorziesDataGrid.ItemsSource = db.Autorzies.ToList();
         }
+
+        private void Button_Add_Autorzy(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Delete_Autorzy(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Update_Autorzy(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

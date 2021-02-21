@@ -27,5 +27,20 @@ namespace BibliotekaBase.Views
             BibliotekaEntities db = new BibliotekaEntities();
             this.wypozyczeniasDataGrid.ItemsSource = db.Wypozyczenias.ToList();
         }
+
+        private void Button_Add_Wypozyczenia(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Delete_Wypozyczenia(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Update_Wypozyczenia(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

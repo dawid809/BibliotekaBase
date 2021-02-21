@@ -27,5 +27,20 @@ namespace BibliotekaBase.Views
             BibliotekaEntities db = new BibliotekaEntities();
             this.ksiazkisDataGrid.ItemsSource = db.Ksiazkis.ToList();
         }
+
+        private void Button_Add_Ksiazki(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Delete_Ksiazki(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Update_Ksiazki(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
