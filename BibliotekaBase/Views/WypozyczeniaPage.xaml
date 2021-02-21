@@ -1,14 +1,65 @@
-﻿<Page x:Class="BibliotekaBase.Views.WypozyczeniaPage"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BibliotekaBase.Views"
+      xmlns:BibliotekaBase="clr-namespace:BibliotekaBase" x:Class="BibliotekaBase.Views.WypozyczeniaPage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="WypozyczeniaPage">
 
-    <Grid>
-        
+    <Page.Resources>
+        <CollectionViewSource x:Key="bibliotekaEntitiesViewSource" d:DesignSource="{d:DesignInstance {x:Type BibliotekaBase:BibliotekaEntities}, CreateList=True}"/>
+        <CollectionViewSource x:Key="bibliotekaEntitiesWypozyczeniasViewSource" Source="{Binding Wypozyczenias, Source={StaticResource bibliotekaEntitiesViewSource}}"/>
+    </Page.Resources>
+
+    <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesWypozyczeniasViewSource}">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Wypożyczenia"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50" Text="{Binding}"/>
+        <DataGrid x:Name="wypozyczeniasDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="355,120,20,40" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn x:Name="data_OddaniaColumn" Header="Data Oddania" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Data_Oddania, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="data_WypozyczeniaColumn" Header="Data Wypozyczenia" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Data_Wypozyczenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="ksiazka_IDColumn" Binding="{Binding Ksiazka_ID}" Header="Ksiazka ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="student_IDColumn" Binding="{Binding Student_ID}" Header="Student ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="wypozyczenia_IDColumn" Binding="{Binding Wypozyczenia_ID}" Header="Wypozyczenia ID" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="77,155,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Data Oddania:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <DatePicker x:Name="data_OddaniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" SelectedDate="{Binding Data_Oddania, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <Label Content="Data Wypozyczenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <DatePicker x:Name="data_WypozyczeniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="1" SelectedDate="{Binding Data_Wypozyczenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <Label Content="Ksiazka ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox x:Name="ksiazka_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Ksiazka_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Student ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <TextBox x:Name="student_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Student_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Wypozyczenia ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+            <TextBox x:Name="wypozyczenia_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding Wypozyczenia_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
     </Grid>
 </Page>

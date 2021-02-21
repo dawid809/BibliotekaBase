@@ -14,9 +14,9 @@
         <CollectionViewSource x:Key="bibliotekaEntitiesStudencisViewSource" Source="{Binding Studencis, Source={StaticResource bibliotekaEntitiesViewSource}}"/>
     </Page.Resources>
 
-    <Grid Background="Red" DataContext="{StaticResource bibliotekaEntitiesStudencisViewSource}">
+    <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesStudencisViewSource}">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Studenci"/></TextBlock>
-        <DataGrid x:Name="studencisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="365,130,35,120" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+        <DataGrid x:Name="studencisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="365,130,35,45" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn x:Name="dataUrodzeniaColumn" Width="SizeToHeader" Header="Data Urodzenia">
                     <DataGridTemplateColumn.CellTemplate>
@@ -30,7 +30,7 @@
                 <DataGridTextColumn x:Name="student_IDColumn" Width="SizeToHeader" Header="Student ID" Binding="{Binding Student_ID}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="74,130,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="88,162,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>

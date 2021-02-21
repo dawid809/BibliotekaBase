@@ -1,0 +1,45 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BibliotekaBase.Views"
+      xmlns:BibliotekaBase="clr-namespace:BibliotekaBase" x:Class="BibliotekaBase.Views.AutorzyPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AutorzyPage">
+
+    <Page.Resources>
+        <CollectionViewSource x:Key="bibliotekaEntitiesViewSource" d:DesignSource="{d:DesignInstance {x:Type BibliotekaBase:BibliotekaEntities}, CreateList=True}"/>
+        <CollectionViewSource x:Key="bibliotekaEntitiesAutorziesViewSource" Source="{Binding Autorzies, Source={StaticResource bibliotekaEntitiesViewSource}}"/>
+    </Page.Resources>
+
+    <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesAutorziesViewSource}">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Autorzy"/></TextBlock>
+        <DataGrid x:Name="autorziesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="360,120,40,95" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="autor_IDColumn" Width="SizeToHeader" Header="Autor ID" Binding="{Binding Autor_ID}"/>
+                <DataGridTextColumn x:Name="imieColumn" Width="SizeToHeader" Header="Imie" Binding="{Binding Imie}"/>
+                <DataGridTextColumn x:Name="nazwiskoColumn" Width="SizeToHeader" Header="Nazwisko" Binding="{Binding Nazwisko}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="85,165,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Autor ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="autor_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Autor_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Imie:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="imieTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Imie, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Nazwisko:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox x:Name="nazwiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+
+    </Grid>
+</Page>

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BibliotekaBase.Views
 {
     /// <summary>
-    /// Interaction logic for Home.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class Home : Page
+    public partial class HomePage : Page
     {
-        public Home()
+        public HomePage()
         {
             InitializeComponent();
         }

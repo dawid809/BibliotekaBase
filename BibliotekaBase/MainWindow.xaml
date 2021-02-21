@@ -23,9 +23,9 @@
             <Button Margin="5" Width="120" Content="Home" Click="HomeViewClicked"></Button>
             <Button Margin="5" Width="120" Content="Student" Click="StudentView_Clicked"></Button>
             <Button Margin="5" Width="120" Content="Wypozyczenia" Click="WypozyczeniaView_Clicked"></Button>
-            <Button Margin="5" Width="120" Content="Ksiazki"></Button>
-            <Button Margin="5" Width="120" Content="Autorzy"></Button>
-            <Button Margin="5" Width="120" Content="TypKsiazki"></Button>
+            <Button Margin="5" Width="120" Content="Ksiazki" Click="KsiazkiView_Clicked"></Button>
+            <Button Margin="5" Width="120" Content="Autorzy" Click="AutorzyView_Clicked"></Button>
+            <Button Margin="5" Width="120" Content="TypKsiazki" Click="TypKsiazkiView_Clicked"></Button>
         </StackPanel>
         <Frame x:Name="Navigation" Margin="0,35,0,0" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" ></Frame>
     </Grid>

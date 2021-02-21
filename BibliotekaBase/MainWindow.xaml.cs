@@ -28,7 +28,7 @@ namespace BibliotekaBase
 
         private void HomeViewClicked(object sender, RoutedEventArgs e)
         {
-            Navigation.Content = new Home();
+            Navigation.Content = new HomePage();
         }
 
         private void StudentView_Clicked(object sender, RoutedEventArgs e)
@@ -39,6 +39,21 @@ namespace BibliotekaBase
         private void WypozyczeniaView_Clicked(object sender, RoutedEventArgs e)
         {
             Navigation.Content = new WypozyczeniaPage();
+        }
+
+        private void KsiazkiView_Clicked(object sender, RoutedEventArgs e)
+        {
+            Navigation.Content = new KsiazkiPage();
+        }
+
+        private void AutorzyView_Clicked(object sender, RoutedEventArgs e)
+        {
+            Navigation.Content = new AutorzyPage();
+        }
+
+        private void TypKsiazkiView_Clicked(object sender, RoutedEventArgs e)
+        {
+            Navigation.Content = new TypKsiazkiPage();
         }
     }
 }
