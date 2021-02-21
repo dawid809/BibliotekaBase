@@ -10,20 +10,20 @@
 namespace BibliotekaBase
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     
     public partial class TypKsiazki
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TypKsiazki()
         {
-            this.Ksiazkis = new HashSet<Ksiazki>();
+            this.Ksiazkis = new ObservableCollection<Ksiazki>();
         }
     
         public int TypKsiazki_ID { get; set; }
         public string Nazwa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ksiazki> Ksiazkis { get; set; }
+        public virtual ObservableCollection<Ksiazki> Ksiazkis { get; set; }
     }
 }

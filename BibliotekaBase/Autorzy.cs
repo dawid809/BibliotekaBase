@@ -10,14 +10,14 @@
 namespace BibliotekaBase
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     
     public partial class Autorzy
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Autorzy()
         {
-            this.Ksiazkis = new HashSet<Ksiazki>();
+            this.Ksiazkis = new ObservableCollection<Ksiazki>();
         }
     
         public int Autor_ID { get; set; }
@@ -25,6 +25,6 @@ namespace BibliotekaBase
         public string Nazwisko { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ksiazki> Ksiazkis { get; set; }
+        public virtual ObservableCollection<Ksiazki> Ksiazkis { get; set; }
     }
 }
