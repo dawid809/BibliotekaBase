@@ -132,6 +132,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.datasource" />
+    <None Include="Autorzy.datasource" />
+    <None Include="BibliotekaBase.Properties.Resources.datasource" />
+    <None Include="BibliotekaBase.Properties.Settings.datasource" />
+    <None Include="BibliotekaEntities.datasource" />
+    <None Include="Ksiazki.datasource" />
+    <None Include="MainWindow.datasource" />
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -140,6 +147,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Studenci.datasource" />
+    <None Include="TypKsiazki.datasource" />
+    <None Include="Wypozyczenia.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
