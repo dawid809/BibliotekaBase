@@ -23,6 +23,9 @@ namespace BibliotekaBase.Views
         public WypozyczeniaPage()
         {
             InitializeComponent();
+
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.wypozyczeniasDataGrid.ItemsSource = db.Wypozyczenias.ToList();
         }
     }
 }

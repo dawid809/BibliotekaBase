@@ -23,6 +23,9 @@ namespace BibliotekaBase.Views
         public KsiazkiPage()
         {
             InitializeComponent();
+
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.ksiazkisDataGrid.ItemsSource = db.Ksiazkis.ToList();
         }
     }
 }

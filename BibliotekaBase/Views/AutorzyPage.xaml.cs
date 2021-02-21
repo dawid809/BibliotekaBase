@@ -23,6 +23,8 @@ namespace BibliotekaBase.Views
         public AutorzyPage()
         {
             InitializeComponent();
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.autorziesDataGrid.ItemsSource = db.Autorzies.ToList();
         }
     }
 }

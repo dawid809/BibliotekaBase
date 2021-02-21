@@ -23,6 +23,9 @@ namespace BibliotekaBase.Views
         public StudenciPage()
         {
             InitializeComponent();
+
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.studencisDataGrid.ItemsSource = db.Studencis.ToList();
         }
     }
 }
