@@ -29,7 +29,17 @@ namespace BibliotekaBase.Views
 
         private void Button_Add_Autorzy(object sender, RoutedEventArgs e)
         {
+            BibliotekaEntities db = new BibliotekaEntities();
 
+            Autorzy autorzy = new Autorzy()
+            {
+               Imie = imieTextBox.Text,
+               Nazwisko = nazwiskoTextBox.Text
+            };
+            db.Autorzies.Add(autorzy);
+            db.SaveChanges();
+            MessageBox.Show("Pomyślnie dodano");
+            Refresh();
         }
 
         private void Button_Delete_Autorzy(object sender, RoutedEventArgs e)
@@ -40,6 +50,12 @@ namespace BibliotekaBase.Views
         private void Button_Update_Autorzy(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Refresh()
+        {
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.autorziesDataGrid.ItemsSource = db.Autorzies.ToList();
         }
     }
 }

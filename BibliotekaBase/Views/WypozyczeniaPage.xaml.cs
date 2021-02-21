@@ -30,7 +30,19 @@ namespace BibliotekaBase.Views
 
         private void Button_Add_Wypozyczenia(object sender, RoutedEventArgs e)
         {
+            BibliotekaEntities db = new BibliotekaEntities();
 
+            Wypozyczenia wypozyczenia = new Wypozyczenia()
+            {
+                Student_ID = int.Parse(student_IDTextBox.Text),
+                Ksiazka_ID = int.Parse(ksiazka_IDTextBox.Text),
+                Data_Wypozyczenia = (DateTime)data_WypozyczeniaDatePicker.SelectedDate,
+                Data_Oddania = (DateTime)data_OddaniaDatePicker.SelectedDate
+            };
+            db.Wypozyczenias.Add(wypozyczenia);
+            db.SaveChanges();
+            MessageBox.Show("Pomyślnie dodano");
+            Refresh();
         }
 
         private void Button_Delete_Wypozyczenia(object sender, RoutedEventArgs e)
@@ -41,6 +53,12 @@ namespace BibliotekaBase.Views
         private void Button_Update_Wypozyczenia(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Refresh()
+        {
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.wypozyczeniasDataGrid.ItemsSource = db.Wypozyczenias.ToList();
         }
     }
 }

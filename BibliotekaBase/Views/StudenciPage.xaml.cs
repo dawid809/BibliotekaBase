@@ -30,7 +30,18 @@ namespace BibliotekaBase.Views
 
         private void Button_Add_Studenci(object sender, RoutedEventArgs e)
         {
+            BibliotekaEntities db = new BibliotekaEntities();
 
+            Studenci studenci = new Studenci()
+            {
+                Imie = imieTextBox.Text,
+                Nazwisko = nazwiskoTextBox.Text,
+                DataUrodzenia = (DateTime)dataUrodzeniaDatePicker.SelectedDate
+            };
+            db.Studencis.Add(studenci);
+            db.SaveChanges();
+            MessageBox.Show("Pomyślnie dodano");
+            Refresh();
         }
 
         private void Button_Delete_Studenci(object sender, RoutedEventArgs e)
@@ -41,6 +52,12 @@ namespace BibliotekaBase.Views
         private void Button_Update_Studenci(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Refresh()
+        {
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.studencisDataGrid.ItemsSource = db.Studencis.ToList();
         }
     }
 }

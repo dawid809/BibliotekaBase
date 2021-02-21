@@ -30,7 +30,19 @@ namespace BibliotekaBase.Views
 
         private void Button_Add_Ksiazki(object sender, RoutedEventArgs e)
         {
+            BibliotekaEntities db = new BibliotekaEntities();
 
+            Ksiazki ksiazki = new Ksiazki()
+            {
+                Autor_ID = int.Parse(autor_IDTextBox.Text),
+                Ilosc_stron = int.Parse(ilosc_stronTextBox.Text),
+                Nazwa = nazwaTextBox.Text,
+                TypKsiazki_ID = int.Parse(typKsiazki_IDTextBox.Text)
+            };
+            db.Ksiazkis.Add(ksiazki);
+            db.SaveChanges();
+            MessageBox.Show("Pomyślnie dodano");
+            Refresh();
         }
 
         private void Button_Delete_Ksiazki(object sender, RoutedEventArgs e)
@@ -41,6 +53,12 @@ namespace BibliotekaBase.Views
         private void Button_Update_Ksiazki(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Refresh()
+        {
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.ksiazkisDataGrid.ItemsSource = db.Ksiazkis.ToList();
         }
     }
 }

@@ -30,12 +30,27 @@ namespace BibliotekaBase.Views
 
         private void Button_Add_TypKsiazki(object sender, RoutedEventArgs e)
         {
+            BibliotekaEntities db = new BibliotekaEntities();
 
+            TypKsiazki typKsiazki = new TypKsiazki()
+            {
+               Nazwa = nazwaTextBox.Text
+            };
+            db.TypKsiazkis.Add(typKsiazki);
+            db.SaveChanges();
+            MessageBox.Show("Pomyślnie dodano");
+            Refresh();
         }
 
         private void Button_Delete_TypKsiazki(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Refresh()
+        {
+            BibliotekaEntities db = new BibliotekaEntities();
+            this.typKsiazkisDataGrid.ItemsSource = db.TypKsiazkis.ToList();
         }
     }
 }
