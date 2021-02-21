@@ -33,12 +33,12 @@ namespace BibliotekaBase
 
         private void StudentView_Clicked(object sender, RoutedEventArgs e)
         {
-            Navigation.Content = new Studenci();
+            Navigation.Content = new StudenciPage();
         }
 
         private void WypozyczeniaView_Clicked(object sender, RoutedEventArgs e)
         {
-            Navigation.Content = new Wypozyczenia();
+            Navigation.Content = new WypozyczeniaPage();
         }
     }
 }

@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BibliotekaBase.Views
+namespace BibliotekaBase
 {
     /// <summary>
-    /// Interaction logic for Studenci.xaml
+    /// Interaction logic for StudenciPage.xaml
     /// </summary>
-    public partial class Studenci : Page
+    public partial class StudenciPage : Page
     {
-        public Studenci()
+        public StudenciPage()
         {
             InitializeComponent();
-            BibliotekaEntities db = new BibliotekaEntities();
-
-            this.studenciDataGrid.ItemsSource = db.Studencis.ToList();
         }
     }
 }

@@ -87,11 +87,11 @@
     <Compile Include="Views\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Studenci.xaml.cs">
-      <DependentUpon>Studenci.xaml</DependentUpon>
+    <Compile Include="Views\StudenciPage.xaml.cs">
+      <DependentUpon>StudenciPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Wypozyczenia.xaml.cs">
-      <DependentUpon>Wypozyczenia.xaml</DependentUpon>
+    <Compile Include="Views\WypozyczeniaPage.xaml.cs">
+      <DependentUpon>WypozyczeniaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wypozyczenia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -112,11 +112,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Studenci.xaml">
+    <Page Include="Views\StudenciPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Wypozyczenia.xaml">
+    <Page Include="Views\WypozyczeniaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

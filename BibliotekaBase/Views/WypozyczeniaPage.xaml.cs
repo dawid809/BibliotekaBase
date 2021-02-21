@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BibliotekaBase.Views
 {
     /// <summary>
-    /// Interaction logic for Wypozyczenia.xaml
+    /// Interaction logic for WypozyczeniaPage.xaml
     /// </summary>
-    public partial class Wypozyczenia : Page
+    public partial class WypozyczeniaPage : Page
     {
-        public Wypozyczenia()
+        public WypozyczeniaPage()
         {
             InitializeComponent();
         }

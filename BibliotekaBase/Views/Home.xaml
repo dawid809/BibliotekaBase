@@ -16,5 +16,6 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBlock HorizontalAlignment="Center" Margin="259,50,191,40"  FontSize="50"><Run Text="Baza danych" /></TextBlock>
+        <Image Height="200" Source="/Images/database4.png" Grid.ColumnSpan="2" Margin="0,150,0,69"/>
     </Grid>
 </Page>
