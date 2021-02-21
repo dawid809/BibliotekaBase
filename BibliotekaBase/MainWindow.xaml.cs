@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BibliotekaBase.Views;
 
 namespace BibliotekaBase
 {
@@ -23,6 +24,21 @@ namespace BibliotekaBase
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void HomeViewClicked(object sender, RoutedEventArgs e)
+        {
+            Navigation.Content = new Home();
+        }
+
+        private void StudentView_Clicked(object sender, RoutedEventArgs e)
+        {
+            Navigation.Content = new Studenci();
+        }
+
+        private void WypozyczeniaView_Clicked(object sender, RoutedEventArgs e)
+        {
+            Navigation.Content = new Wypozyczenia();
         }
     }
 }

@@ -7,6 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="725*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF536774" Offset="0"/>
+                <GradientStop Color="#FFE8B2B2" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Margin="259,50,191,40"  FontSize="50"><Run Text="Baza danych" /></TextBlock>
+        <Image Height="200" Source="/Images/database4.png" Grid.ColumnSpan="2" Margin="0,150,0,69"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2">
+            <Button Margin="5" Width="120" Content="Home" Click="HomeViewClicked"></Button>
+            <Button Margin="5" Width="120" Content="Student" Click="StudentView_Clicked"></Button>
+            <Button Margin="5" Width="120" Content="Wypozyczenia" Click="WypozyczeniaView_Clicked"></Button>
+            <Button Margin="5" Width="120" Content="Ksiazki"></Button>
+            <Button Margin="5" Width="120" Content="Autorzy"></Button>
+            <Button Margin="5" Width="120" Content="TypKsiazki"></Button>
+        </StackPanel>
+        <Frame x:Name="Navigation" Margin="0,35,0,0" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" ></Frame>
     </Grid>
 </Window>
