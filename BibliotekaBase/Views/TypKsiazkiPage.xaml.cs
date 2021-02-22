@@ -38,13 +38,8 @@ namespace BibliotekaBase.Views
             };
             db.TypKsiazkis.Add(typKsiazki);
             db.SaveChanges();
-            MessageBox.Show("Pomyślnie dodano");
+            MessageBox.Show("Pomyślnie dodano!");
             Refresh();
-        }
-
-        private void Button_Delete_TypKsiazki(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void Refresh()

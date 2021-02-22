@@ -40,13 +40,22 @@ namespace BibliotekaBase.Views
             };
             db.Studencis.Add(studenci);
             db.SaveChanges();
-            MessageBox.Show("Pomyślnie dodano");
+            MessageBox.Show("Pomyślnie dodano!");
             Refresh();
         }
 
         private void Button_Delete_Studenci(object sender, RoutedEventArgs e)
         {
-
+            BibliotekaEntities db = new BibliotekaEntities();
+            int id = (studencisDataGrid.SelectedItem as Studenci).Student_ID;
+            var deleteStudent = db.Studencis.Where(s => s.Student_ID == id).SingleOrDefault();
+            var deleteWypozyczenia = db.Wypozyczenias.Where(w => w.Student_ID == id);
+            db.Wypozyczenias.RemoveRange(deleteWypozyczenia);
+            db.SaveChanges();
+            db.Studencis.Remove(deleteStudent);
+            db.SaveChanges();
+            studencisDataGrid.ItemsSource = db.Studencis.ToList();
+            MessageBox.Show("Pomyślnie usunięto!");
         }
 
         private void Button_Update_Studenci(object sender, RoutedEventArgs e)

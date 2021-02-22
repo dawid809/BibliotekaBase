@@ -16,9 +16,8 @@
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesWypozyczeniasViewSource}">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Wypożyczenia"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="55,340,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Wypozyczenia"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="155,340,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Wypozyczenia"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="260,340,0,0" VerticalAlignment="Top" Width="75" Click="Button_Update_Wypozyczenia"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="95,340,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Wypozyczenia"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="225,340,0,0" VerticalAlignment="Top" Width="75" Click="Button_Update_Wypozyczenia"/>
         <DataGrid x:Name="wypozyczeniasDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="355,120,20,40" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTemplateColumn x:Name="data_OddaniaColumn" Header="Data Oddania" Width="SizeToHeader">

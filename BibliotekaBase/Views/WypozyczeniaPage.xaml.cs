@@ -41,13 +41,8 @@ namespace BibliotekaBase.Views
             };
             db.Wypozyczenias.Add(wypozyczenia);
             db.SaveChanges();
-            MessageBox.Show("Pomyślnie dodano");
+            MessageBox.Show("Pomyślnie dodano!");
             Refresh();
-        }
-
-        private void Button_Delete_Wypozyczenia(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void Button_Update_Wypozyczenia(object sender, RoutedEventArgs e)

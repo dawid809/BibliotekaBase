@@ -16,9 +16,8 @@
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesAutorziesViewSource}">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Autorzy"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="85,310,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Autorzy"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="180,310,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Autorzy"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="280,310,0,0" VerticalAlignment="Top" Width="75" Click="Button_Update_Autorzy"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="115,310,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Autorzy"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="240,310,0,0" VerticalAlignment="Top" Width="74" Click="Button_Update_Autorzy"/>
         <DataGrid x:Name="autorziesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="360,120,40,95" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="autor_IDColumn" Width="SizeToHeader" Header="Autor ID" Binding="{Binding Autor_ID}"/>

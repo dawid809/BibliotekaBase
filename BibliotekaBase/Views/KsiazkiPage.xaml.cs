@@ -41,13 +41,22 @@ namespace BibliotekaBase.Views
             };
             db.Ksiazkis.Add(ksiazki);
             db.SaveChanges();
-            MessageBox.Show("Pomyślnie dodano");
+            MessageBox.Show("Pomyślnie dodano!");
             Refresh();
         }
 
         private void Button_Delete_Ksiazki(object sender, RoutedEventArgs e)
         {
-
+            BibliotekaEntities db = new BibliotekaEntities();
+            int id = (ksiazkisDataGrid.SelectedItem as Ksiazki).Ksiazka_ID;
+            var delteKsiazka= db.Ksiazkis.Where(k => k.Ksiazka_ID == id).SingleOrDefault();
+            var delteWypozyczenia = db.Wypozyczenias.Where(w => w.Ksiazka_ID == id);
+            db.Wypozyczenias.RemoveRange(delteWypozyczenia);
+            db.SaveChanges();
+            db.Ksiazkis.Remove(delteKsiazka);
+            db.SaveChanges();
+            ksiazkisDataGrid.ItemsSource = db.Ksiazkis.ToList();
+            MessageBox.Show("Pomyślnie usunięto!");
         }
 
         private void Button_Update_Ksiazki(object sender, RoutedEventArgs e)

@@ -38,13 +38,8 @@ namespace BibliotekaBase.Views
             };
             db.Autorzies.Add(autorzy);
             db.SaveChanges();
-            MessageBox.Show("Pomyślnie dodano");
+            MessageBox.Show("Pomyślnie dodano!");
             Refresh();
-        }
-
-        private void Button_Delete_Autorzy(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void Button_Update_Autorzy(object sender, RoutedEventArgs e)
