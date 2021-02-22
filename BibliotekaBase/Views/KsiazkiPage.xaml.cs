@@ -34,10 +34,10 @@ namespace BibliotekaBase.Views
 
             Ksiazki ksiazki = new Ksiazki()
             {
-                Autor_ID = int.Parse(autor_IDTextBox.Text),
-                Ilosc_stron = int.Parse(ilosc_stronTextBox.Text),
-                Nazwa = nazwaTextBox.Text,
-                TypKsiazki_ID = int.Parse(typKsiazki_IDTextBox.Text)
+                Autor_ID = int.Parse(autor_IDTextBox.Text.Trim()),
+                Ilosc_stron = int.Parse(ilosc_stronTextBox.Text.Trim()),
+                Nazwa = nazwaTextBox.Text.Trim(),
+                TypKsiazki_ID = int.Parse(typKsiazki_IDTextBox.Text.Trim())
             };
             db.Ksiazkis.Add(ksiazki);
             db.SaveChanges();

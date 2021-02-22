@@ -33,8 +33,8 @@ namespace BibliotekaBase.Views
 
             Autorzy autorzy = new Autorzy()
             {
-               Imie = imieTextBox.Text,
-               Nazwisko = nazwiskoTextBox.Text
+               Imie = imieTextBox.Text.Trim(),
+               Nazwisko = nazwiskoTextBox.Text.Trim()
             };
             db.Autorzies.Add(autorzy);
             db.SaveChanges();

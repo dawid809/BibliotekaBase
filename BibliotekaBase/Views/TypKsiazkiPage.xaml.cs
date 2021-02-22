@@ -34,7 +34,7 @@ namespace BibliotekaBase.Views
 
             TypKsiazki typKsiazki = new TypKsiazki()
             {
-               Nazwa = nazwaTextBox.Text
+               Nazwa = nazwaTextBox.Text.Trim()
             };
             db.TypKsiazkis.Add(typKsiazki);
             db.SaveChanges();

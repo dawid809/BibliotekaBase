@@ -34,8 +34,8 @@ namespace BibliotekaBase.Views
 
             Studenci studenci = new Studenci()
             {
-                Imie = imieTextBox.Text,
-                Nazwisko = nazwiskoTextBox.Text,
+                Imie = imieTextBox.Text.Trim(),
+                Nazwisko = nazwiskoTextBox.Text.Trim(),
                 DataUrodzenia = (DateTime)dataUrodzeniaDatePicker.SelectedDate
             };
             db.Studencis.Add(studenci);

@@ -34,8 +34,8 @@ namespace BibliotekaBase.Views
 
             Wypozyczenia wypozyczenia = new Wypozyczenia()
             {
-                Student_ID = int.Parse(student_IDTextBox.Text),
-                Ksiazka_ID = int.Parse(ksiazka_IDTextBox.Text),
+                Student_ID = int.Parse(student_IDTextBox.Text.Trim()),
+                Ksiazka_ID = int.Parse(ksiazka_IDTextBox.Text.Trim()),
                 Data_Wypozyczenia = (DateTime)data_WypozyczeniaDatePicker.SelectedDate,
                 Data_Oddania = (DateTime)data_OddaniaDatePicker.SelectedDate
             };
