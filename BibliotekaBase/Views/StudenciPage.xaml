@@ -18,9 +18,9 @@
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50" FontWeight="Bold" FontFamily="Cambria Math" Margin="20"><Run Text="Studenci"/></TextBlock>
         <Button Content="Add" HorizontalAlignment="Left" Margin="80,261,0,0" VerticalAlignment="Top" Width="100" Click="Button_Add_Studenci" FontSize="16" FontWeight="Bold"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="221,261,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Studenci" FontSize="16" FontWeight="Bold"/>
-        <DataGrid x:Name="studencisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="365,105,35,70" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" FontSize="14">
+        <DataGrid x:Name="studencisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="365,105,25,70" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" FontSize="14">
             <DataGrid.Columns>
-                <DataGridTemplateColumn x:Name="dataUrodzeniaColumn" Width="2*" Header="Data Urodzenia">
+                <DataGridTemplateColumn x:Name="dataUrodzeniaColumn" Width="1.5*" Header="Data Urodzenia">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding DataUrodzenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>

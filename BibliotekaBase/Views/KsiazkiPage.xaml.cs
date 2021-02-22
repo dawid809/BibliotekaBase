@@ -32,31 +32,48 @@ namespace BibliotekaBase.Views
         {
             BibliotekaEntities db = new BibliotekaEntities();
 
-            Ksiazki ksiazki = new Ksiazki()
+            try
             {
-                Autor_ID = int.Parse(autor_IDTextBox.Text.Trim()),
-                Ilosc_stron = int.Parse(ilosc_stronTextBox.Text.Trim()),
-                Nazwa = nazwaTextBox.Text.Trim(),
-                TypKsiazki_ID = int.Parse(typKsiazki_IDTextBox.Text.Trim())
-            };
-            db.Ksiazkis.Add(ksiazki);
-            db.SaveChanges();
-            MessageBox.Show("Pomyślnie dodano!");
-            Refresh();
+                Ksiazki ksiazki = new Ksiazki()
+                {
+                    Autor_ID = int.Parse(autor_IDTextBox.Text.Trim()),
+                    Ilosc_stron = int.Parse(ilosc_stronTextBox.Text.Trim()),
+                    Nazwa = nazwaTextBox.Text.Trim(),
+                    TypKsiazki_ID = int.Parse(typKsiazki_IDTextBox.Text.Trim())
+                };
+                db.Ksiazkis.Add(ksiazki);
+                db.SaveChanges();
+                MessageBox.Show("Pomyślnie dodano!", "Info");
+                Refresh();
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Podaj wszystkie wartośći w polach tekstowych!\n\nSprawdź typ książki o takim ID istnieje.", "Info", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void Button_Delete_Ksiazki(object sender, RoutedEventArgs e)
         {
             BibliotekaEntities db = new BibliotekaEntities();
-            int id = (ksiazkisDataGrid.SelectedItem as Ksiazki).Ksiazka_ID;
-            var delteKsiazka= db.Ksiazkis.Where(k => k.Ksiazka_ID == id).SingleOrDefault();
-            var delteWypozyczenia = db.Wypozyczenias.Where(w => w.Ksiazka_ID == id);
-            db.Wypozyczenias.RemoveRange(delteWypozyczenia);
-            db.SaveChanges();
-            db.Ksiazkis.Remove(delteKsiazka);
-            db.SaveChanges();
-            ksiazkisDataGrid.ItemsSource = db.Ksiazkis.ToList();
-            MessageBox.Show("Pomyślnie usunięto!");
+
+            try
+            {
+                int id = (ksiazkisDataGrid.SelectedItem as Ksiazki).Ksiazka_ID;
+                var delteKsiazka = db.Ksiazkis.Where(k => k.Ksiazka_ID == id).SingleOrDefault();
+                var delteWypozyczenia = db.Wypozyczenias.Where(w => w.Ksiazka_ID == id);
+                db.Wypozyczenias.RemoveRange(delteWypozyczenia);
+                db.SaveChanges();
+                db.Ksiazkis.Remove(delteKsiazka);
+                db.SaveChanges();
+                ksiazkisDataGrid.ItemsSource = db.Ksiazkis.ToList();
+                MessageBox.Show("Pomyślnie usunięto!", "Info");
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Zaznacz wiersz w tabeli, który chcesz usunąć", "Info", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void Refresh()

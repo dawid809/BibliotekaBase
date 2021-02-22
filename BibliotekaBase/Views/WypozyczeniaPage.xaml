@@ -16,10 +16,11 @@
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesWypozyczeniasViewSource}">
         <TextBlock HorizontalAlignment="Center" Margin="20" TextWrapping="Wrap" FontSize="50"><Run Text="Wypożyczenia" FontWeight="Bold" FontFamily="Cambria Math"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="150,275,0,0" VerticalAlignment="Top" Width="120" Click="Button_Add_Wypozyczenia" FontSize="16" FontWeight="Bold"/>
-        <DataGrid x:Name="wypozyczeniasDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="350,100,25,60" RowDetailsVisibilityMode="VisibleWhenSelected" FontSize="14">
+        <Button Content="Add" HorizontalAlignment="Left" Margin="40,265,0,0" VerticalAlignment="Top" Width="100" Click="Button_Add_Wypozyczenia" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="206,265,0,0" VerticalAlignment="Top" Width="100" Click="Button_Delete_Wypozyczenia" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.14,0.4"/>
+        <DataGrid x:Name="wypozyczeniasDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="330,100,10,60" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
-                <DataGridTemplateColumn x:Name="data_OddaniaColumn" Header="Data Oddania" Width="*">
+                <DataGridTemplateColumn x:Name="data_OddaniaColumn" Header="Data Oddania" Width="0.8*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding Data_Oddania, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
@@ -33,12 +34,12 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="ksiazka_IDColumn" Binding="{Binding Ksiazka_ID}" Header="Ksiazka ID" Width="*"/>
-                <DataGridTextColumn x:Name="student_IDColumn" Binding="{Binding Student_ID}" Header="Student ID" Width="*"/>
-                <DataGridTextColumn x:Name="wypozyczenia_IDColumn" Binding="{Binding Wypozyczenia_ID}" Header="Wypozyczenia ID" Width="*"/>
+                <DataGridTextColumn x:Name="ksiazka_IDColumn" Binding="{Binding Ksiazka_ID}" Header="Ksiazka ID" Width="0.65*"/>
+                <DataGridTextColumn x:Name="student_IDColumn" Binding="{Binding Student_ID}" Header="Student ID" Width="0.65*"/>
+                <DataGridTextColumn x:Name="wypozyczenia_IDColumn" Binding="{Binding Wypozyczenia_ID}" Header="Wypozyczenia ID" Width="*" FontSize="14"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="40,100,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>

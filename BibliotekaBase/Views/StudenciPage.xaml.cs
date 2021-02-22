@@ -32,30 +32,45 @@ namespace BibliotekaBase.Views
         {
             BibliotekaEntities db = new BibliotekaEntities();
 
-            Studenci studenci = new Studenci()
+            try
             {
-                Imie = imieTextBox.Text.Trim(),
-                Nazwisko = nazwiskoTextBox.Text.Trim(),
-                DataUrodzenia = (DateTime)dataUrodzeniaDatePicker.SelectedDate
-            };
-            db.Studencis.Add(studenci);
-            db.SaveChanges();
-            MessageBox.Show("Pomyślnie dodano!");
-            Refresh();
+                Studenci studenci = new Studenci()
+                {
+                    Imie = imieTextBox.Text.Trim(),
+                    Nazwisko = nazwiskoTextBox.Text.Trim(),
+                    DataUrodzenia = (DateTime)dataUrodzeniaDatePicker.SelectedDate
+                };
+
+                db.Studencis.Add(studenci);
+                db.SaveChanges();
+                MessageBox.Show("Pomyślnie dodano!", "Info");
+                Refresh();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Podaj wszystkie wartośći w polach tekstowych!", "Info", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void Button_Delete_Studenci(object sender, RoutedEventArgs e)
         {
             BibliotekaEntities db = new BibliotekaEntities();
-            int id = (studencisDataGrid.SelectedItem as Studenci).Student_ID;
-            var deleteStudent = db.Studencis.Where(s => s.Student_ID == id).SingleOrDefault();
-            var deleteWypozyczenia = db.Wypozyczenias.Where(w => w.Student_ID == id);
-            db.Wypozyczenias.RemoveRange(deleteWypozyczenia);
-            db.SaveChanges();
-            db.Studencis.Remove(deleteStudent);
-            db.SaveChanges();
-            studencisDataGrid.ItemsSource = db.Studencis.ToList();
-            MessageBox.Show("Pomyślnie usunięto!");
+            try
+            {
+                int id = (studencisDataGrid.SelectedItem as Studenci).Student_ID;
+                var deleteStudent = db.Studencis.Where(s => s.Student_ID == id).SingleOrDefault();
+                var deleteWypozyczenia = db.Wypozyczenias.Where(w => w.Student_ID == id);
+                db.Wypozyczenias.RemoveRange(deleteWypozyczenia);
+                db.SaveChanges();
+                db.Studencis.Remove(deleteStudent);
+                db.SaveChanges();
+                studencisDataGrid.ItemsSource = db.Studencis.ToList();
+                MessageBox.Show("Pomyślnie usunięto!", "Info");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Zaznacz wiersz w tabeli, który chcesz usunąć", "Info", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void Refresh()

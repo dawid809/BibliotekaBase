@@ -19,10 +19,10 @@
         <TextBlock HorizontalAlignment="Center"  FontSize="50" Grid.Column="1" Margin="20" FontWeight="Bold" FontFamily="Cambria Math"><Run Text="Książki"/></TextBlock>
         <Button Content="Add" HorizontalAlignment="Left" Margin="40,291,0,0" VerticalAlignment="Top" Width="100" Click="Button_Add_Ksiazki" FontSize="16" FontWeight="Bold"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="173,291,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Ksiazki" FontSize="16" FontWeight="Bold"/>
-        <DataGrid x:Name="ksiazkisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="300,107,20,50" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" FontSize="14">
+        <DataGrid x:Name="ksiazkisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="290,107,20,50" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" FontSize="14">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="autor_IDColumn" Width="*" Header="Autor ID" Binding="{Binding Autor_ID}"/>
-                <DataGridTextColumn x:Name="ilosc_stronColumn" Width="*" Header="Ilosc stron" Binding="{Binding Ilosc_stron}"/>
+                <DataGridTextColumn x:Name="autor_IDColumn" Width="0.8*" Header="Autor ID" Binding="{Binding Autor_ID}"/>
+                <DataGridTextColumn x:Name="ilosc_stronColumn" Width="0.8*" Header="Ilosc stron" Binding="{Binding Ilosc_stron}"/>
                 <DataGridTextColumn x:Name="ksiazka_IDColumn" Width="*" Header="Ksiazka ID" Binding="{Binding Ksiazka_ID}"/>
                 <DataGridTextColumn x:Name="nazwaColumn" Width="*" Header="Nazwa" Binding="{Binding Nazwa}"/>
                 <DataGridTextColumn x:Name="typKsiazki_IDColumn" Width="*" Header="Typ Ksiazki ID" Binding="{Binding TypKsiazki_ID}"/>

@@ -36,16 +36,37 @@ namespace BibliotekaBase.Views
                Imie = imieTextBox.Text.Trim(),
                Nazwisko = nazwiskoTextBox.Text.Trim()
             };
-            db.Autorzies.Add(autorzy);
-            db.SaveChanges();
-            MessageBox.Show("Pomyślnie dodano!");
-            Refresh();
+                db.Autorzies.Add(autorzy);
+                db.SaveChanges();
+                MessageBox.Show("Pomyślnie dodano!", "Info");
+                Refresh();
         }
 
         private void Refresh()
         {
             BibliotekaEntities db = new BibliotekaEntities();
             this.autorziesDataGrid.ItemsSource = db.Autorzies.ToList();
+        }
+
+        private void Button_Delete_Autorzy(object sender, RoutedEventArgs e)
+        {
+            BibliotekaEntities db = new BibliotekaEntities();
+            try
+            {
+                int id = (autorziesDataGrid.SelectedItem as Autorzy).Autor_ID;
+                var deleteAutor = db.Autorzies.Where(a => a.Autor_ID == id).SingleOrDefault();
+                var deleteKsiazka = db.Ksiazkis.Where(k => k.Autor_ID == id);
+                db.Ksiazkis.RemoveRange(deleteKsiazka);
+                db.SaveChanges();
+                db.Autorzies.Remove(deleteAutor);
+                db.SaveChanges();
+                autorziesDataGrid.ItemsSource = db.Autorzies.ToList();
+                MessageBox.Show("Pomyślnie usunięto!", "Info");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Zaznacz wiersz w tabeli, który chcesz usunąć", "Info", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }
