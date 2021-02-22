@@ -15,25 +15,24 @@
     </Page.Resources>
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesStudencisViewSource}">
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Studenci"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="65,325,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Studenci"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="165,325,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Studenci"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="265,325,0,0" VerticalAlignment="Top" Width="75" Click="Button_Update_Studenci"/>
-        <DataGrid x:Name="studencisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="365,130,35,45" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50" FontWeight="Bold" FontFamily="Cambria Math" Margin="20"><Run Text="Studenci"/></TextBlock>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="80,280,0,0" VerticalAlignment="Top" Width="100" Click="Button_Add_Studenci" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="221,280,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Studenci" FontSize="16" FontWeight="Bold"/>
+        <DataGrid x:Name="studencisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="365,105,35,70" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" FontSize="14">
             <DataGrid.Columns>
-                <DataGridTemplateColumn x:Name="dataUrodzeniaColumn" Width="SizeToHeader" Header="Data Urodzenia">
+                <DataGridTemplateColumn x:Name="dataUrodzeniaColumn" Width="2*" Header="Data Urodzenia">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding DataUrodzenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="imieColumn" Width="SizeToHeader" Header="Imie" Binding="{Binding Imie}"/>
-                <DataGridTextColumn x:Name="nazwiskoColumn" Width="SizeToHeader" Header="Nazwisko" Binding="{Binding Nazwisko}"/>
-                <DataGridTextColumn x:Name="student_IDColumn" Width="SizeToHeader" Header="Student ID" Binding="{Binding Student_ID}"/>
+                <DataGridTextColumn x:Name="imieColumn" Width="*" Header="Imie" Binding="{Binding Imie}"/>
+                <DataGridTextColumn x:Name="nazwiskoColumn" Width="*" Header="Nazwisko" Binding="{Binding Nazwisko}"/>
+                <DataGridTextColumn x:Name="student_IDColumn" Width="*" Header="Student ID" Binding="{Binding Student_ID}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="88,162,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="80,105,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -44,14 +43,14 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Data Urodzenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <DatePicker x:Name="dataUrodzeniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" SelectedDate="{Binding DataUrodzenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
-            <Label Content="Imie:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-            <TextBox x:Name="imieTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Imie, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Nazwisko:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
-            <TextBox x:Name="nazwiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Student ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-            <TextBox x:Name="student_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Student_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Data Urodzenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" FontSize="14"/>
+            <DatePicker x:Name="dataUrodzeniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3,4,0,4" Grid.Row="0" SelectedDate="{Binding DataUrodzenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
+            <Label Content="Imie:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox x:Name="imieTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Imie, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
+            <Label Content="Nazwisko:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox x:Name="nazwiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
+            <Label Content="Student ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox x:Name="student_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Student_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
         </Grid>
 
     </Grid>

@@ -15,7 +15,7 @@
             <GradientStop Color="#FFE8B2B2" Offset="1"/>
         </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock HorizontalAlignment="Center" Margin="219,10,191,40"  FontSize="50"><Run Text="Baza danych" /></TextBlock>
-        <Image Height="200" Source="/Images/database4.png" Grid.ColumnSpan="2" Margin="0,100,0,69"/>
+        <TextBlock HorizontalAlignment="Center" Margin="219,10,191,40"  FontSize="60" FontFamily="Cambria Math" FontWeight="Bold"><Run Text="Baza danych" /></TextBlock>
+        <Image MinHeight="200" Source="/Images/database4.png" Grid.ColumnSpan="2" Margin="0,100,0,69"/>
     </Grid>
 </Page>

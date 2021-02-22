@@ -15,31 +15,30 @@
     </Page.Resources>
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesWypozyczeniasViewSource}">
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50"><Run Text="Wypożyczenia"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="95,340,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Wypozyczenia"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="225,340,0,0" VerticalAlignment="Top" Width="75" Click="Button_Update_Wypozyczenia"/>
-        <DataGrid x:Name="wypozyczeniasDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="355,120,20,40" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <TextBlock HorizontalAlignment="Center" Margin="20" TextWrapping="Wrap" FontSize="50"><Run Text="Wypożyczenia" FontWeight="Bold" FontFamily="Cambria Math"/></TextBlock>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="145,300,0,0" VerticalAlignment="Top" Width="120" Click="Button_Add_Wypozyczenia" FontSize="16" FontWeight="Bold"/>
+        <DataGrid x:Name="wypozyczeniasDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="350,100,25,60" RowDetailsVisibilityMode="VisibleWhenSelected" FontSize="14">
             <DataGrid.Columns>
-                <DataGridTemplateColumn x:Name="data_OddaniaColumn" Header="Data Oddania" Width="SizeToHeader">
+                <DataGridTemplateColumn x:Name="data_OddaniaColumn" Header="Data Oddania" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding Data_Oddania, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn x:Name="data_WypozyczeniaColumn" Header="Data Wypozyczenia" Width="SizeToHeader">
+                <DataGridTemplateColumn x:Name="data_WypozyczeniaColumn" Header="Data Wypozyczenia" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding Data_Wypozyczenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="ksiazka_IDColumn" Binding="{Binding Ksiazka_ID}" Header="Ksiazka ID" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="student_IDColumn" Binding="{Binding Student_ID}" Header="Student ID" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="wypozyczenia_IDColumn" Binding="{Binding Wypozyczenia_ID}" Header="Wypozyczenia ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="ksiazka_IDColumn" Binding="{Binding Ksiazka_ID}" Header="Ksiazka ID" Width="*"/>
+                <DataGridTextColumn x:Name="student_IDColumn" Binding="{Binding Student_ID}" Header="Student ID" Width="*"/>
+                <DataGridTextColumn x:Name="wypozyczenia_IDColumn" Binding="{Binding Wypozyczenia_ID}" Header="Wypozyczenia ID" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="77,155,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="59,100,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -51,16 +50,16 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Data Oddania:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <DatePicker x:Name="data_OddaniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" SelectedDate="{Binding Data_Oddania, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
-            <Label Content="Data Wypozyczenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-            <DatePicker x:Name="data_WypozyczeniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="1" SelectedDate="{Binding Data_Wypozyczenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
-            <Label Content="Ksiazka ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
-            <TextBox x:Name="ksiazka_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Ksiazka_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Student ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-            <TextBox x:Name="student_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Student_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Wypozyczenia ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
-            <TextBox x:Name="wypozyczenia_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding Wypozyczenia_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Data Oddania:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" FontSize="14"/>
+            <DatePicker x:Name="data_OddaniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3,4,0,4" Grid.Row="0" SelectedDate="{Binding Data_Oddania, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
+            <Label Content="Data Wypozyczenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center" FontSize="14"/>
+            <DatePicker x:Name="data_WypozyczeniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3,4,0,4" Grid.Row="1" SelectedDate="{Binding Data_Wypozyczenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
+            <Label Content="Ksiazka ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox x:Name="ksiazka_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Ksiazka_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
+            <Label Content="Student ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox x:Name="student_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Student_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
+            <Label Content="Wypozyczenia ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox x:Name="wypozyczenia_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding Wypozyczenia_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
         </Grid>
     </Grid>
 </Page>

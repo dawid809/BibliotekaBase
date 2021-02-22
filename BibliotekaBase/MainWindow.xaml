@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BibliotekaBase"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="BibliotekaApp" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="725*"/>
@@ -17,16 +17,16 @@
                 <GradientStop Color="#FFE8B2B2" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock HorizontalAlignment="Center" Margin="259,50,191,40"  FontSize="50"><Run Text="Baza danych" /></TextBlock>
-        <Image Height="200" Source="/Images/database4.png" Grid.ColumnSpan="2" Margin="0,150,0,69"/>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2">
-            <Button Margin="5" Width="120" Content="Home" Click="HomeViewClicked"></Button>
-            <Button Margin="5" Width="120" Content="Student" Click="StudentView_Clicked"></Button>
-            <Button Margin="5" Width="120" Content="Wypozyczenia" Click="WypozyczeniaView_Clicked"></Button>
-            <Button Margin="5" Width="120" Content="Ksiazki" Click="KsiazkiView_Clicked"></Button>
-            <Button Margin="5" Width="120" Content="Autorzy" Click="AutorzyView_Clicked"></Button>
-            <Button Margin="5" Width="120" Content="TypKsiazki" Click="TypKsiazkiView_Clicked"></Button>
+        <TextBlock HorizontalAlignment="Center"  FontSize="70" Margin="50,50,0,0" FontFamily="Cambria Math" FontWeight="Bold"><Run Text="Baza danych" /></TextBlock>
+        <Image MinHeight="200" Source="/Images/database4.png" Grid.ColumnSpan="2" Margin="0,150,0,69"/>
+        <StackPanel Background="DarkSlateGray" Orientation="Horizontal" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2">
+            <Button Margin="5" MinWidth="120" Content="Home" Click="HomeViewClicked" FontSize="14" FontWeight="Bold"></Button>
+            <Button Margin="5" MinWidth="120" Content="Student" Click="StudentView_Clicked" FontSize="14" FontWeight="Bold"></Button>
+            <Button Margin="5" MinWidth="120" Content="Wypozyczenia" Click="WypozyczeniaView_Clicked" FontSize="14" FontWeight="Bold"></Button>
+            <Button Margin="5" MinWidth="120" Content="Ksiazki" Click="KsiazkiView_Clicked" FontSize="14" FontWeight="Bold"></Button>
+            <Button Margin="5" MinWidth="120" Content="Autorzy" Click="AutorzyView_Clicked" FontSize="14" FontWeight="Bold"></Button>
+            <Button Margin="5" MinWidth="120" Content="TypKsiazki" Click="TypKsiazkiView_Clicked" FontSize="14" FontWeight="Bold"></Button>
         </StackPanel>
-        <Frame x:Name="Navigation" Margin="0,35,0,0" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" ></Frame>
+        <Frame x:Name="Navigation" Margin="0,40,0,0"  NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" ></Frame>
     </Grid>
 </Window>

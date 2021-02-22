@@ -59,11 +59,6 @@ namespace BibliotekaBase.Views
             MessageBox.Show("Pomyślnie usunięto!");
         }
 
-        private void Button_Update_Ksiazki(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Refresh()
         {
             BibliotekaEntities db = new BibliotekaEntities();

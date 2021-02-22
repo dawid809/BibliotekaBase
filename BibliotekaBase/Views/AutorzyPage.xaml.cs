@@ -42,11 +42,6 @@ namespace BibliotekaBase.Views
             Refresh();
         }
 
-        private void Button_Update_Autorzy(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Refresh()
         {
             BibliotekaEntities db = new BibliotekaEntities();
