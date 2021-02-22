@@ -22,10 +22,10 @@
         <StackPanel Background="DarkSlateGray" Orientation="Horizontal" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2">
             <Button Margin="5" MinWidth="120" Content="Home" Click="HomeViewClicked" FontSize="14" FontWeight="Bold"></Button>
             <Button Margin="5" MinWidth="120" Content="Student" Click="StudentView_Clicked" FontSize="14" FontWeight="Bold"></Button>
-            <Button Margin="5" MinWidth="120" Content="Wypozyczenia" Click="WypozyczeniaView_Clicked" FontSize="14" FontWeight="Bold"></Button>
-            <Button Margin="5" MinWidth="120" Content="Ksiazki" Click="KsiazkiView_Clicked" FontSize="14" FontWeight="Bold"></Button>
+            <Button Margin="5" MinWidth="120" Content="Wypożyczenia" Click="WypozyczeniaView_Clicked" FontSize="14" FontWeight="Bold"></Button>
+            <Button Margin="5" MinWidth="120" Content="Ksiązki" Click="KsiazkiView_Clicked" FontSize="14" FontWeight="Bold"></Button>
             <Button Margin="5" MinWidth="120" Content="Autorzy" Click="AutorzyView_Clicked" FontSize="14" FontWeight="Bold"></Button>
-            <Button Margin="5" MinWidth="120" Content="TypKsiazki" Click="TypKsiazkiView_Clicked" FontSize="14" FontWeight="Bold"></Button>
+            <Button Margin="5" MinWidth="120" Content="TypKsiązki" Click="TypKsiazkiView_Clicked" FontSize="14" FontWeight="Bold"></Button>
         </StackPanel>
         <Frame x:Name="Navigation" Margin="0,40,0,0"  NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" ></Frame>
     </Grid>

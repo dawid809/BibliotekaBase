@@ -17,8 +17,8 @@
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesKsiazkisViewSource}">
 
         <TextBlock HorizontalAlignment="Center"  FontSize="50" Grid.Column="1" Margin="20" FontWeight="Bold" FontFamily="Cambria Math"><Run Text="Książki"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="38,310,0,0" VerticalAlignment="Top" Width="100" Click="Button_Add_Ksiazki" FontSize="16" FontWeight="Bold"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="173,310,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Ksiazki" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="40,291,0,0" VerticalAlignment="Top" Width="100" Click="Button_Add_Ksiazki" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="173,291,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.267,-0.75" Click="Button_Delete_Ksiazki" FontSize="16" FontWeight="Bold"/>
         <DataGrid x:Name="ksiazkisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="300,107,20,50" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="autor_IDColumn" Width="*" Header="Autor ID" Binding="{Binding Autor_ID}"/>
@@ -44,8 +44,6 @@
             <TextBox x:Name="autor_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Autor_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
             <Label Content="Ilosc stron:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center" FontSize="14"/>
             <TextBox x:Name="ilosc_stronTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Ilosc_stron, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
-            <Label Content="Ksiazka ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center" FontSize="14"/>
-            <TextBox x:Name="ksiazka_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Ksiazka_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
             <Label Content="Nazwa:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center" FontSize="14"/>
             <TextBox x:Name="nazwaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Nazwa, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
             <Label Content="Typ Ksiazki ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center" FontSize="14"/>

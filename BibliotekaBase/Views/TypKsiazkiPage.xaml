@@ -16,14 +16,14 @@
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesTypKsiazkisViewSource}">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50" Margin="20" FontFamily="Cambria Math"><Run Text="Typ Książki" FontWeight="Bold"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="155,215,0,0" VerticalAlignment="Top" Width="120" Click="Button_Add_TypKsiazki" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="160,175,0,0" VerticalAlignment="Top" Width="120" Click="Button_Add_TypKsiazki" FontSize="16" FontWeight="Bold"/>
         <DataGrid x:Name="typKsiazkisDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="360,115,40,115" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="nazwaColumn" Width="*" Header="Nazwa" Binding="{Binding Nazwa}"/>
                 <DataGridTextColumn x:Name="typKsiazki_IDColumn" Width="*" Header="Typ Ksiazki ID" Binding="{Binding TypKsiazki_ID}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="101,115,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="120,115,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -34,8 +34,6 @@
             </Grid.RowDefinitions>
             <Label Content="Nazwa:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" FontSize="14"/>
             <TextBox x:Name="nazwaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Nazwa, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
-            <Label Content="Typ Ksiazki ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center" FontSize="14"/>
-            <TextBox x:Name="typKsiazki_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding TypKsiazki_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
         </Grid>
 
     </Grid>

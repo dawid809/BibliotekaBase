@@ -16,7 +16,7 @@
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesWypozyczeniasViewSource}">
         <TextBlock HorizontalAlignment="Center" Margin="20" TextWrapping="Wrap" FontSize="50"><Run Text="Wypożyczenia" FontWeight="Bold" FontFamily="Cambria Math"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="145,300,0,0" VerticalAlignment="Top" Width="120" Click="Button_Add_Wypozyczenia" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="150,275,0,0" VerticalAlignment="Top" Width="120" Click="Button_Add_Wypozyczenia" FontSize="16" FontWeight="Bold"/>
         <DataGrid x:Name="wypozyczeniasDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="350,100,25,60" RowDetailsVisibilityMode="VisibleWhenSelected" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTemplateColumn x:Name="data_OddaniaColumn" Header="Data Oddania" Width="*">
@@ -38,7 +38,7 @@
                 <DataGridTextColumn x:Name="wypozyczenia_IDColumn" Binding="{Binding Wypozyczenia_ID}" Header="Wypozyczenia ID" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="59,100,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -58,8 +58,6 @@
             <TextBox x:Name="ksiazka_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Ksiazka_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
             <Label Content="Student ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center" FontSize="14"/>
             <TextBox x:Name="student_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Student_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
-            <Label Content="Wypozyczenia ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center" FontSize="14"/>
-            <TextBox x:Name="wypozyczenia_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding Wypozyczenia_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
         </Grid>
     </Grid>
 </Page>

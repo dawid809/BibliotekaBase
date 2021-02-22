@@ -16,7 +16,7 @@
 
     <Grid Background="LightGray" DataContext="{StaticResource bibliotekaEntitiesAutorziesViewSource}">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="50" Margin="20" FontFamily="Cambria Math" FontWeight="Bold"><Run Text="Autorzy"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="120" Click="Button_Add_Autorzy" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="170,220,0,0" VerticalAlignment="Top" Width="120" Click="Button_Add_Autorzy" FontSize="16" FontWeight="Bold"/>
         <DataGrid x:Name="autorziesDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="360,120,40,95" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="autor_IDColumn" Width="*" Header="Autor ID" Binding="{Binding Autor_ID}"/>
@@ -24,7 +24,7 @@
                 <DataGridTextColumn x:Name="nazwiskoColumn" Width="*" Header="Nazwisko" Binding="{Binding Nazwisko}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="106,120,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="126,120,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -34,8 +34,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Autor ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" FontSize="14"/>
-            <TextBox x:Name="autor_IDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Autor_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
             <Label Content="Imie:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center" FontSize="14"/>
             <TextBox x:Name="imieTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Imie, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" FontSize="14"/>
             <Label Content="Nazwisko:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center" FontSize="14"/>
