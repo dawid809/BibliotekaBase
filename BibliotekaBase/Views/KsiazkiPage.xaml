@@ -23,7 +23,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="autor_IDColumn" Width="0.8*" Header="Autor ID" Binding="{Binding Autor_ID}"/>
                 <DataGridTextColumn x:Name="ilosc_stronColumn" Width="0.8*" Header="Ilosc stron" Binding="{Binding Ilosc_stron}"/>
-                <DataGridTextColumn x:Name="ksiazka_IDColumn" Width="*" Header="Ksiazka ID" Binding="{Binding Ksiazka_ID}"/>
+                <DataGridTextColumn x:Name="ksiazka_IDColumn" Width="0.8*" Header="Ksiazka ID" Binding="{Binding Ksiazka_ID}"/>
                 <DataGridTextColumn x:Name="nazwaColumn" Width="*" Header="Nazwa" Binding="{Binding Nazwa}"/>
                 <DataGridTextColumn x:Name="typKsiazki_IDColumn" Width="*" Header="Typ Ksiazki ID" Binding="{Binding TypKsiazki_ID}"/>
             </DataGrid.Columns>
